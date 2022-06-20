@@ -1,12 +1,18 @@
 import useMyPosts from "./hooks/useMyPosts";
 
-import StyledFeed from "./styled/Feed.styled";
+import Post from "./Post";
+
+import StyledFeed, { LoadMoreButton } from "./styled/Feed.styled";
 
 const Account = () => {
-  const { data } = useMyPosts();
+  const { data, fetchNextPage, hasNextPage, isFetchingNextPage } = useMyPosts();
   return (
     <StyledFeed>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+      <h1>My Posts</h1>
+      {data?.pages?.map(page => page.posts.map(post => <Post post={post} />))}
+      <LoadMoreButton>
+        {hasNextPage && !isFetchingNextPage && <button onClick={() => fetchNextPage()}>Load More</button>}
+      </LoadMoreButton>
     </StyledFeed>
   );
 };

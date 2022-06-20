@@ -1,13 +1,17 @@
 import useFeed from "./hooks/useFeed";
+import Post from "./Post";
 
-import StyledFeed from "./styled/Feed.styled";
+import StyledFeed, { LoadMoreButton } from "./styled/Feed.styled";
 
 const Feed = () => {
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage } = useFeed();
   return (
     <StyledFeed>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
-      {hasNextPage && !isFetchingNextPage && <button onClick={() => fetchNextPage()}>Load More</button>}
+      <h1>Recent Posts</h1>
+      {data?.pages?.map(page => page.posts.map(post => <Post post={post} />))}
+      <LoadMoreButton>
+        {hasNextPage && !isFetchingNextPage && <button onClick={() => fetchNextPage()}>Load More</button>}
+      </LoadMoreButton>
     </StyledFeed>
   );
 };
