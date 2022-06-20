@@ -13,6 +13,8 @@ require("./utilities/google-strategy.js");
 const authRouter = require("./routes/auth-routes");
 const indexRouter = require("./routes/index-routes");
 
+app.use(express.json({ limit: "10kb" }));
+
 app.use(CORS({ credentials: true, origin: process.env.CLIENT_URL }));
 
 app.use(session({
