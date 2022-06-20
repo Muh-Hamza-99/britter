@@ -8,9 +8,6 @@ const Context = ({ children }) => {
         fetch(`${process.env.REACT_APP_SERVER_URL}`, { credentials: "include" })
             .then(response => response.json())
             .then(data => setUser({ ...data }));
-        return () => {
-            cleanup
-        };
     }, []);
     return <UserContext.Provider value={user}>{children}</UserContext.Provider>
 };
