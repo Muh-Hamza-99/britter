@@ -29,6 +29,7 @@ justify-content: space-around;
     padding: 1rem 2rem;
     border-radius: 5px;
     resize: none;
+    box-sizing: border-box;
     font-size: 1.4rem;
 }
 & > button {
