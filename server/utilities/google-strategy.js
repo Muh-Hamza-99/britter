@@ -17,7 +17,7 @@ passport.use(new GoogleStrategy({
         if (currentUserQuery.rows.length === 0) {
             await pool.query("INSERT INTO users (username, image, google_id) VALUES ($1, $2, $3)", [account.name, account.picture, account.sub]);
             const id = await pool.query("SELECT id FROM users WHERE google_id=$1", [account.sub]);
-            user = { id, username: account.name, image: account.image };
+            user = { id: id.rows[0].id, username: account.name, image: account.image };
         } else {
             user = {
                 id: currentUserQuery.rows[0].id,
