@@ -17,7 +17,7 @@ const SignedInApp = () => {
           <Route path="/" element={ <Feed /> } />
           <Route path="/account" element={ <Account /> } />
         </Routes>
-       {modalOpen &&  <PostModal />}
+       {modalOpen &&  <PostModal setModalOpen={setModalOpen} />}
     </StyledSignedInApp>
   );
 };
