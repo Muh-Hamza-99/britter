@@ -11,6 +11,7 @@ const CORS = require("cors");
 require("./utilities/google-strategy.js");
 
 const authRouter = require("./routes/auth-routes");
+const indexRouter = require("./routes/index-routes");
 
 app.use(CORS({ credentials: true, origin: process.env.CLIENT_URL }));
 
@@ -27,6 +28,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use("/", indexRouter);
 app.use("/auth", authRouter);
 
 const PORT = process.env.PORT || 8000;

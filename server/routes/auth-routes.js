@@ -6,7 +6,7 @@ const passport = require("passport");
 router.get("/google", passport.authenticate("google", { scope: "profile" }));
 
 router.get("/google/callback", passport.authenticate("google", { session: true }), ( req, res) => {
-    res.send(req.user);
+    res.redirect(`${process.env.CLIENT_URL}`);
 });
 
 module.exports = router;
