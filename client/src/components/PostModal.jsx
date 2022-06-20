@@ -7,7 +7,15 @@ const PostModal = ({ setPostModal }) => {
   const backgroundRef = useRef();
 ;  return (
     <StyledPostModal ref={backgroundRef} onClick={event => {if (event.target === backgroundRef.current) setPostModal(false) }}>
-        <PostModalForm>
+        <PostModalForm onSubmit={event => {
+                event.preventDefault();
+                const postText = value.post;
+                if (postText.length > 0) {
+                    // Send Request
+                }
+                setValue({ post: "" });
+                setPostModal(false)
+            }}>
             <PostModalHeader>
                 <h1>New Post</h1>
             </PostModalHeader>
