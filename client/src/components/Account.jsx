@@ -1,11 +1,11 @@
-import useMyPosts from "./hooks/useMyPosts";
+import useFeed from "./hooks/useFeed";
 
 import Post from "./Post";
 
 import StyledFeed, { LoadMoreButton } from "./styled/Feed.styled";
 
 const Account = () => {
-  const { data, fetchNextPage, hasNextPage, isFetchingNextPage } = useMyPosts();
+  const { data, fetchNextPage, hasNextPage, isFetchingNextPage } = useFeed("my_posts");
   return (
     <StyledFeed>
       <h1>My Posts</h1>
