@@ -6,6 +6,7 @@ const useMyPosts = () => {
         if (!res.ok) throw new Error("Something went wrong on the server side.");
         return res.json();
     }, {
+        refetchInterval: 1000 * 10,
         getNextPageParam: (lastPage) => lastPage.posts.length >= 5 ? lastPage.cursor : undefined
     });
 };
