@@ -5,7 +5,7 @@ import StyledPostModal, { PostModalForm, PostModalHeader } from "./styled/PostMo
 const PostModal = ({ setPostModal }) => {
   const [value, setValue] = useState({ post: "" });
   const backgroundRef = useRef();
-;  return (
+  return (
     <StyledPostModal ref={backgroundRef} onClick={event => {if (event.target === backgroundRef.current) setPostModal(false) }}>
         <PostModalForm onSubmit={event => {
                 event.preventDefault();
