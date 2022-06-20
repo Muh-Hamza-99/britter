@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import StyledNavbar, { DesktopMenu, HamburgerButton, MobileMenu }  from "./styled/Navbar.styled";
+import PostModalButton from "./styled/PostModal.styled";
 
 const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
@@ -12,11 +13,13 @@ const Navbar = () => {
             <Link onClick={() => setNavOpen(false)} to="/"><h1>Social Media</h1></Link>
             <Link onClick={() => setNavOpen(false)} to="/"><p>Feed</p></Link>
             <Link onClick={() => setNavOpen(false)} to="/account"><p>Account</p></Link>
+            <PostModalButton className="fas fa-plus" onClick={() => setNavOpen(false)}/>
         </MobileMenu>
         <DesktopMenu>
             <Link to="/"><h1>Social Media</h1></Link>
             <Link to="/"><p>Feed</p></Link>
             <Link to="/account"><p>Account</p></Link>
+            <PostModalButton className="fas fa-plus" />
         </DesktopMenu>
     </StyledNavbar>
   );
