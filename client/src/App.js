@@ -17,9 +17,7 @@ const App = () => {
       <ThemeProvider theme={darkTheme}>
         <GlobalStyle />
         <StyledApp>
-          { 
-            user?.loggedIn === true ? "logged in" : <SignUp  />
-          }
+          {user?.loggedIn === null ? ("") : user?.loggedIn === true ? ("logged in") : (<SignUp  />)}
         </StyledApp>
       </ThemeProvider>
     </BrowserRouter>
