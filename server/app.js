@@ -8,7 +8,7 @@ const session = require("express-session");
 
 const CORS = require("cors");
 
-require("./utilities/auth.js");
+require("./utilities/google-strategy.js");
 
 const authRouter = require("./routes/auth-routes");
 
