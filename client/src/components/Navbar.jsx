@@ -13,11 +13,11 @@ const Navbar = () => {
             <Link onClick={() => setNavOpen(false)} to="/"><p>Feed</p></Link>
             <Link onClick={() => setNavOpen(false)} to="/account"><p>Account</p></Link>
         </MobileMenu>
-        {/* <DesktopMenu>
+        <DesktopMenu>
             <Link to="/"><h1>Social Media</h1></Link>
             <Link to="/"><p>Feed</p></Link>
             <Link to="/account"><p>Account</p></Link>
-        </DesktopMenu> */}
+        </DesktopMenu>
     </StyledNavbar>
   );
 };
