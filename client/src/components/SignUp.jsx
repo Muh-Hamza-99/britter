@@ -1,4 +1,4 @@
-import StyledSignUp, { SignUpButton } from "./styled/SignUp.Styled";
+import StyledSignUp, { SignUpButton } from "./styled/SignUp.styled";
 
 const SignUp = () => {
   const handleSignUp = event => {

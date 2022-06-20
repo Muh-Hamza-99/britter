@@ -10,10 +10,10 @@ const Navbar = ({ setModalOpen }) => {
     <StyledNavbar>
         <HamburgerButton className="fas fa-bars" onClick={() => setNavOpen(currentValue => !currentValue) } />
         <MobileMenu open={navOpen}>
-            <Links setNavOpen={setNavOpen} setModal={setModal} />
+            <Links setNavOpen={setNavOpen} setModal={setModalOpen} />
         </MobileMenu>
         <DesktopMenu>
-          <Links setNavOpen={null} setModal={setModal} />
+          <Links setNavOpen={null} setModal={setModalOpen} />
         </DesktopMenu>
     </StyledNavbar>
   );
