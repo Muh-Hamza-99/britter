@@ -2,17 +2,18 @@ import { useState, useRef } from "react";
 
 import StyledPostModal, { PostModalForm, PostModalHeader } from "./styled/PostModal.styled";
 
+import useSendPost from "./hooks/useSendPost";
+
 const PostModal = ({ setPostModal }) => {
   const [value, setValue] = useState({ post: "" });
   const backgroundRef = useRef();
+  const { mutate: sendPost } = useSendPost;
   return (
     <StyledPostModal ref={backgroundRef} onClick={event => {if (event.target === backgroundRef.current) setPostModal(false) }}>
         <PostModalForm onSubmit={event => {
                 event.preventDefault();
                 const postText = value.post;
-                if (postText.length > 0) {
-                    // Send Request
-                }
+                if (postText.length > 0) sendPost({ post: postText });;
                 setValue({ post: "" });
                 setPostModal(false)
             }}>
