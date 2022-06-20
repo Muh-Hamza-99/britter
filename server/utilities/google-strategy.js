@@ -30,3 +30,7 @@ passport.use(new GoogleStrategy({
         done(error);
     };
 }));
+
+passport.serializeUser((user, done) => done(user));
+
+passport.deserializeUser((user, done) => done(user));
