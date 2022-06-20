@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
-const PostModalButton = styled.i`
+const PostModal = styled.div``;
+
+export const PostModalForm = styled.form``;
+
+export const PostModalHeader = styled.div``;
+
+export const PostModalButton = styled.i`
 margin-top: auto;
 margin-inline: auto;
 padding: 0.7rem 1.7rem;
@@ -22,4 +28,4 @@ border: 4px solid ${({ theme }) => theme.primary};
 }
 `;
 
-export default PostModalButton;
+export default PostModal;
