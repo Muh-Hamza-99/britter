@@ -1,9 +1,13 @@
 import useMyPosts from "./hooks/useMyPosts";
 
+import StyledFeed from "./styled/Feed.styled";
+
 const Account = () => {
   const { data } = useMyPosts();
   return (
-    <pre>{JSON.stringify(data, null, 2)}</pre>
+    <StyledFeed>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
+    </StyledFeed>
   );
 };
 

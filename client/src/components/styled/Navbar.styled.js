@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 const Navbar = styled.div`
+position: sticky;
+top: 0;
 `;
 
 export const HamburgerButton = styled.i`
