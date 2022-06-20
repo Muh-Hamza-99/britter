@@ -1,6 +1,9 @@
+import useFeed from "./hooks/useFeed";
+
 const Feed = () => {
+  const { data } = useFeed();
   return (
-    <div>Feed</div>
+    <pre>{JSON.stringify(data, null, 2)}</pre>
   );
 };
 
